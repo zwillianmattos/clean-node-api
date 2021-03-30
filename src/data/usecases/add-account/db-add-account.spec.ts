@@ -6,13 +6,18 @@ interface SutTypes {
     encrypterSub: Encrypter
 }
 
-const makeSut = (): SutTypes => {
-    class EncrypterStub {
+const makeEncrypter = (): Encrypter => {
+    class EncrypterStub implements Encrypter {
         async encrypt(value: string): Promise<string> {
             return new Promise( resolve => resolve('hashed_password'))
         }
     }
-    const encrypterSub = new EncrypterStub()
+
+    return new EncrypterStub()
+}
+
+const makeSut = (): SutTypes => {
+    const encrypterSub = makeEncrypter()
     const sut = new DbAddAccount(encrypterSub)
 
     return {
@@ -25,7 +30,7 @@ describe('DbAddAccount Usecase', () => {
     test('Shold call Encrypter with correct password ', async () => {
         const { sut, encrypterSub } = makeSut()
         const encryptSpy = jest.spyOn(encrypterSub, 'encrypt')
-        const accountData = {
+        const accountData = { 
             name: 'valid_name',
             email: 'valid_email',
             password: 'valid_password',
