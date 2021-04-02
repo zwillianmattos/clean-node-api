@@ -11,7 +11,8 @@ export class AccountMongoRepository implements AddAccountRepository {
         )
         const result = await accountCollection.insertOne(accountData)
 
-        return MongoHelper.map(result.ops[0]);
+        const account = result.ops[0];
+        return MongoHelper.map(account);
     }
 
 }
