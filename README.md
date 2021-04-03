@@ -8,10 +8,6 @@ O objetivo deste projeto é o desenvolvimento de uma API TEMPLATE com uma arquit
 ### APIs construídas no treinamento
    - Cadastro
    - Login
-   - Criar enquete
-   - Listar enquetes
-   - Responder enquete
-   - Resultado da enquete
 
 ## Princípios
 
