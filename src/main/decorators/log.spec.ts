@@ -46,7 +46,7 @@ describe('LogController Decorator', () => {
         }
 
         await sut.handle(httpRequest)
-        expect(handleSpy).toHaveBeenCalledWith()
+        expect(handleSpy).toHaveBeenCalledWith(httpRequest)
     })
 
     test('Shold return the same result of the controller', async () => {
