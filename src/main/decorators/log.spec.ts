@@ -35,13 +35,7 @@ const makeLogErrorRepository = (): LogErrorRepository => {
 const makeController = (): Controller => {
     class ControllerStub implements Controller {
         async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
-            const httpResponse: HttpResponse = {
-                statusCode: 200,
-                body: {
-                    name: 'Willian'
-                }
-            }
-            return new Promise(resolve => resolve(httpResponse))
+            return new Promise(resolve => resolve(ok(makeFakeAccount())))
         }
     }
 
