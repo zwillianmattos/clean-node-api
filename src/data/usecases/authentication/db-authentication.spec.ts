@@ -1,10 +1,12 @@
 import { DbAuthentication } from "./db-authentication"
-import { AccountModel, 
-    AuthenticationModel, 
-    HashComparer, 
-    LoadAccountByEmailRepository, 
-    TokenGenerator, 
-    UpdateAccessTokenRepository } from "./db-authentication-protocols"
+import {
+    AccountModel,
+    AuthenticationModel,
+    HashComparer,
+    LoadAccountByEmailRepository,
+    TokenGenerator,
+    UpdateAccessTokenRepository
+} from "./db-authentication-protocols"
 
 
 
