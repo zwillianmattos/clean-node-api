@@ -7,7 +7,7 @@ import { ValidationComposite } from "../../presentation/helpers/validators/valid
 import { Controller } from "../../presentation/protocols";
 import { EmailValidatorAdapter } from "../../utils/email-validator-adapter";
 import { LogControllerDecorator } from "../decorators/logs";
-import { makeSignUpValidation } from "./signup validation";
+import { makeSignUpValidation } from "./signup-validation";
 
 
 export const makeSignUpController = (): Controller => {
