@@ -86,16 +86,16 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import bcrypt from 'bcrypt'
-import { Encrypter } from "../../data/protocols/encrypter";
+import { Hasher } from "../../data/protocols/hasher";
 &nbsp;
 &nbsp;
-export class BcryptAdapter implements Encrypter {
+export class BcryptAdapter implements Hasher {
     private readonly salt:number
 &nbsp;
     constructor (salt: number) {
         this.salt = salt
     }
-    async encrypt(value: string): Promise&lt;string&gt; {
+    async hash(value: string): Promise&lt;string&gt; {
         const hash = await bcrypt.hash(value, this.salt)
         return hash;
     }
